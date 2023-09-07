@@ -15,7 +15,7 @@ export interface SnapCarouselResult {
 export interface SnapCarouselOptions {
   readonly axis?: 'x' | 'y';
   readonly initialPages?: number[][];
-  readonly behavior?: 'auto' | 'instant' | 'smooth';
+  readonly behavior?: ScrollBehavior;
 }
 
 interface SnapCarouselState {
