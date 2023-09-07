@@ -15,6 +15,7 @@ export interface SnapCarouselResult {
 export interface SnapCarouselOptions {
   readonly axis?: 'x' | 'y';
   readonly initialPages?: number[][];
+  readonly behavior?: 'auto' | 'instant' | 'smooth';
 }
 
 interface SnapCarouselState {
@@ -24,7 +25,8 @@ interface SnapCarouselState {
 
 export const useSnapCarousel = ({
   axis = 'x',
-  initialPages = []
+  initialPages = [],
+  behavior = 'smooth'
 }: SnapCarouselOptions = {}): SnapCarouselResult => {
   const dimension = axis === 'x' ? 'width' : 'height';
   const scrollDimension = axis === 'x' ? 'scrollWidth' : 'scrollHeight';
@@ -166,7 +168,7 @@ export const useSnapCarousel = ({
     );
     // NOTE: I've tried `leadEl.scrollIntoView` but it often fails in chrome on Mac OS.
     scrollEl.scrollTo({
-      behavior: 'smooth',
+      behavior,
       [nearSidePos]:
         getOffsetRect(leadEl, leadEl.parentElement)[nearSidePos] - scrollSpacing
     });
