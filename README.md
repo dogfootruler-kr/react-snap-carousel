@@ -1,4 +1,4 @@
-# React Snap Carousel 🫰
+# React Snap Carousel 🫰 
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/richardscarrott/react-snap-carousel.svg)](https://www.npmjs.com/package/react-snap-carousel)
 [![npm downloads](https://img.shields.io/npm/dw/react-snap-carousel)](https://www.npmjs.com/package/react-snap-carousel)
